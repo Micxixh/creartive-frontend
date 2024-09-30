@@ -89,5 +89,19 @@ module.exports = {
     // backgroundColor: ['active'],
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.hide-scrollbar': {
+          /* For most browsers */
+          'scrollbar-width': 'none', /* Firefox */
+          '-ms-overflow-style': 'none', /* IE and Edge */
+          'overflow': 'scroll',
+        },
+        '.hide-scrollbar::-webkit-scrollbar': {
+          display: 'none', /* Chrome, Safari, and Opera */
+        },
+      })
+    }
+  ],
 };
